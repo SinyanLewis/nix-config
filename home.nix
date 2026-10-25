@@ -100,7 +100,39 @@
     };
   };
 
-  programs.vscode.enable = true;
+  programs.vscode = {
+    enable = true;
+
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        ms-ceintl.vscode-language-pack-zh-hans
+        ms-vscode.cpptools-extension-pack
+        ms-vscode.hexeditor
+        github.vscode-pull-request-github
+        jnoortheen.nix-ide
+      ];
+
+      userSettings = {
+        "editor.fontSize" = 16;
+        "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
+        "editor.fontLigatures" = true;
+        "editor.wordWrap" = "wordWrapColumn";
+        "editor.wordWrapColumn" = 80;
+        "editor.tabSize" = 2;
+        "editor.insertSpaces" = true;
+        "editor.formatOnPaste" = true;
+        "editor.autoIndentOnPaste" = true;
+        "editor.renderWhitespace" = "trailing";
+        "editor.cursorSmoothCaretAnimation" = "on";
+        "files.insertFinalNewline" = true;
+        "files.simpleDialog.enable" = true;
+        "files.trimFinalNewlines" = true;
+        "files.trimTrailingWhitespace" = true;
+        "editor.guides.bracketPairs" = true;
+        "update.mode" = "none";
+      };
+    };
+  };
 
   programs.zed-editor = {
     enable = true;
