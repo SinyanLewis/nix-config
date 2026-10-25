@@ -108,6 +108,8 @@
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
         ms-ceintl.vscode-language-pack-zh-hans
+        ms-vscode.cpptools
+        ms-vscode.cmake-tools
         ms-vscode.cpptools-extension-pack
         ms-vscode.hexeditor
         github.vscode-pull-request-github
