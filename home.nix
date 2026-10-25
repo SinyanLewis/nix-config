@@ -17,6 +17,25 @@
     createDirectories = true;
   };
 
+  home.pointerCursor = {
+    enable = true;
+    package = pkgs.capitaine-cursors;
+    name = "capitaine-cursors";
+    size = 28;
+
+    gtk.enable = true;
+    x11.enable = true;
+  };
+
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      name = "capitaine-cursors";
+      package = pkgs.capitaine-cursors;
+      size = 28;
+    };
+  };
+
   programs.firefox = {
     enable = true;
     languagePacks = [ "en-US" ];
