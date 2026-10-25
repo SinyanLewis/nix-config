@@ -53,6 +53,13 @@
       ];
     };
   };
+  services.xserver.desktopManager.runXdgAutostartIfNone = true;
+
+  environment.sessionVariables = {
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+  };
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
