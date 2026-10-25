@@ -120,6 +120,7 @@
         "editor.fontSize" = 16;
         "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
         "editor.fontLigatures" = true;
+        "editor.minimap.showSlider" = "always";
         "editor.wordWrap" = "wordWrapColumn";
         "editor.wordWrapColumn" = 80;
         "editor.tabSize" = 2;
