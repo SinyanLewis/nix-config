@@ -9,6 +9,8 @@
     fuzzel
     just
     nautilus
+    nixd
+    nixfmt
     unzip
   ];
 
@@ -130,6 +132,31 @@
         "files.trimTrailingWhitespace" = true;
         "editor.guides.bracketPairs" = true;
         "update.mode" = "none";
+
+        "nix.enableLanguageServer" = true;
+        "nix.serverPath" = "nixd";
+
+        "nix.serverSettings" = {
+          nixd = {
+            formatting = {
+              command = [ "nixfmt" ];
+            };
+
+            nixpkgs = {
+              expr = "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs { }";
+            };
+
+            options = {
+              nixos = {
+                expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.nixos-x.options";
+              };
+
+              home-manager = {
+                expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.nixos-x.options.home-manager.users.type.getSubOptions []";
+              };
+            };
+          };
+        };
       };
     };
   };
