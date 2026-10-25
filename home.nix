@@ -126,11 +126,12 @@
         "editor.autoIndentOnPaste" = true;
         "editor.renderWhitespace" = "trailing";
         "editor.cursorSmoothCaretAnimation" = "on";
+        "editor.guides.bracketPairs" = true;
         "files.insertFinalNewline" = true;
         "files.simpleDialog.enable" = true;
         "files.trimFinalNewlines" = true;
         "files.trimTrailingWhitespace" = true;
-        "editor.guides.bracketPairs" = true;
+        "github.copilot.nextEditSuggestions.enabled" = false;
         "update.mode" = "none";
 
         "nix.enableLanguageServer" = true;
