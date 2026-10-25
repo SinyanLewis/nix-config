@@ -128,5 +128,7 @@
       __include: rime_ice_suggestion:/
   '';
 
+  xdg.configFile."niri".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/config/niri";
+
   home.stateVersion = "26.05";
 }
