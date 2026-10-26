@@ -106,6 +106,14 @@ output "eDP-1" {
     position x=0 y=0
 }
 
+output "DP-1" {
+    // off
+    mode "2240x1400@59.999"
+    scale 1.5
+    transform "90"
+    position x=-933 y=-400
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Layout
