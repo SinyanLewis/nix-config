@@ -127,71 +127,7 @@
     };
   };
 
-  programs.vscode = {
-    enable = true;
-
-    profiles.default = {
-      extensions = with pkgs.vscode-extensions; [
-        ms-ceintl.vscode-language-pack-zh-hans
-        ms-vscode.cpptools
-        ms-vscode.cpptools-extension-pack
-        ms-vscode.cmake-tools
-        ms-vscode.makefile-tools
-        ms-vscode.hexeditor
-        github.vscode-pull-request-github
-        jnoortheen.nix-ide
-      ];
-
-      userSettings = {
-        "editor.fontSize" = 16;
-        "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
-        "editor.fontLigatures" = true;
-        "editor.minimap.showSlider" = "always";
-        "editor.wordWrap" = "wordWrapColumn";
-        "editor.wordWrapColumn" = 80;
-        "editor.tabSize" = 2;
-        "editor.insertSpaces" = true;
-        "editor.formatOnPaste" = true;
-        "editor.autoIndentOnPaste" = true;
-        "editor.renderWhitespace" = "trailing";
-        "editor.cursorSmoothCaretAnimation" = "on";
-        "editor.guides.bracketPairs" = true;
-        "files.insertFinalNewline" = true;
-        "files.simpleDialog.enable" = true;
-        "files.trimFinalNewlines" = true;
-        "files.trimTrailingWhitespace" = true;
-        "github.copilot.nextEditSuggestions.enabled" = false;
-        "chat.titleBar.openInAgentsWindow.enabled" = false;
-        "explorer.confirmDelete" = false;
-        "update.mode" = "none";
-
-        "nix.enableLanguageServer" = true;
-        "nix.serverPath" = "nixd";
-
-        "nix.serverSettings" = {
-          nixd = {
-            formatting = {
-              command = [ "nixfmt" ];
-            };
-
-            nixpkgs = {
-              expr = "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs { }";
-            };
-
-            options = {
-              nixos = {
-                expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.nixos-x.options";
-              };
-
-              home-manager = {
-                expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.nixos-x.options.home-manager.users.type.getSubOptions []";
-              };
-            };
-          };
-        };
-      };
-    };
-  };
+  programs.vscode.enable = true;
 
   programs.zed-editor = {
     enable = true;
