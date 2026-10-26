@@ -148,6 +148,7 @@
         "files.trimTrailingWhitespace" = true;
         "github.copilot.nextEditSuggestions.enabled" = false;
         "chat.titleBar.openInAgentsWindow.enabled" = false;
+        "explorer.confirmDelete" = false;
         "update.mode" = "none";
 
         "nix.enableLanguageServer" = true;
