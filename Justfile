@@ -1,14 +1,14 @@
 deploy:
-    nh os switch
+  nh os switch
 
 boot:
-    nh os boot
+  nh os boot
 
 test:
-    nh os test
+  nh os test
 
 clean:
-    nh clean all
+  nh clean all
 
 up:
-    nix flake update
+  nix flake update

@@ -2,7 +2,12 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -72,9 +77,6 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-
-  
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -95,7 +97,10 @@
 
   users.users.lewis = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ];
   };
 
   programs.niri = {
@@ -117,17 +122,17 @@
   };
 
   programs.qylock = {
-      enable = true;
-      theme = "clockwork/orbital";
-      sddm.enable = true;
-      quickshell.enable = false;
-      themeOptions = {
-        clockwork.orbital = {
-          themeMode = "dark";
-          enableWindup = false;
-        };
+    enable = true;
+    theme = "clockwork/orbital";
+    sddm.enable = true;
+    quickshell.enable = false;
+    themeOptions = {
+      clockwork.orbital = {
+        themeMode = "dark";
+        enableWindup = false;
       };
     };
+  };
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -155,7 +160,10 @@
   #   enableSSHSupport = true;
   # };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
 
   # List services that you want to enable:
@@ -194,4 +202,3 @@
   system.stateVersion = "26.05"; # Did you read the comment?
 
 }
-

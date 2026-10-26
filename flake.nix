@@ -19,24 +19,33 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, disko, qylock, ... }: {
-    nixosConfigurations.nixos-x = nixpkgs.lib.nixosSystem {
-      modules = [
-        ./configuration.nix
-        ./disko.nix
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      disko,
+      qylock,
+      ...
+    }:
+    {
+      nixosConfigurations.nixos-x = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./configuration.nix
+          ./disko.nix
 
-        disko.nixosModules.disko
-        qylock.nixosModules.default
-        home-manager.nixosModules.home-manager {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = { inherit inputs; };
-            users.lewis = ./home.nix;
-          };
-        }
-      ];
+          disko.nixosModules.disko
+          qylock.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit inputs; };
+              users.lewis = ./home.nix;
+            };
+          }
+        ];
+      };
     };
-  };
 }
-

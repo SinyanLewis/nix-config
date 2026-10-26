@@ -87,7 +87,11 @@
       SearchEngines = {
         Default = "Bing";
         PreventInstalls = true;
-        Remove = [ "Wikipedia (en)" "DuckDuckGo" "Perplexity" ];
+        Remove = [
+          "Wikipedia (en)"
+          "DuckDuckGo"
+          "Perplexity"
+        ];
       };
 
       TranslateEnabled = false;
@@ -212,7 +216,8 @@
       __include: rime_ice_suggestion:/
   '';
 
-  xdg.configFile."niri".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/config/niri";
+  xdg.configFile."niri".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/config/niri";
 
   home.stateVersion = "26.05";
 }
