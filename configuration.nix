@@ -140,6 +140,12 @@
     vim
     wget
     efibootmgr
+    gcc
+    gnumake
+    gdb
+    cmake
+    ninja
+    clang-tools
   ];
 
   fonts.packages = with pkgs; [
