@@ -1,5 +1,9 @@
-{ config, pkgs, ... }:
-
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   home.username = "lewis";
   home.homeDirectory = "/home/lewis";
@@ -13,6 +17,8 @@
     nixfmt
     swaybg
     unzip
+
+    inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.pi
   ];
 
   xdg.userDirs = {
