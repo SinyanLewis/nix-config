@@ -220,5 +220,8 @@
   xdg.configFile."niri".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/config/niri";
 
+  xdg.configFile."waybar".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/config/waybar";
+
   home.stateVersion = "26.05";
 }
