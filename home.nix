@@ -9,13 +9,19 @@
   home.homeDirectory = "/home/lewis";
 
   home.packages = with pkgs; [
+    curl
     fastfetch
+    fd
+    fzf
     fuzzel
     just
+    lazygit
     nautilus
     nixd
     nixfmt
+    ripgrep
     swaybg
+    tree-sitter
     unzip
 
     inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.pi
@@ -43,6 +49,14 @@
       package = pkgs.capitaine-cursors;
       size = 28;
     };
+  };
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    vimAlias = true;
+    viAlias = true;
+    sideloadInitLua = true;
   };
 
   programs.firefox = {
@@ -230,6 +244,9 @@
 
   xdg.configFile."waybar".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/config/waybar";
+
+  xdg.configFile."nvim".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/config/nvim";
 
   home.stateVersion = "26.05";
 }
