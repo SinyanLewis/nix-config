@@ -11,6 +11,7 @@
     nautilus
     nixd
     nixfmt
+    swaybg
     unzip
   ];
 
