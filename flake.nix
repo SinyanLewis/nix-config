@@ -34,23 +34,24 @@
       ...
     }:
     {
-      nixosConfigurations.nixos-x = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./configuration.nix
-          ./disko.nix
+      nixosConfigurations = {
+        nixos-x = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./hosts/nixos-x
 
-          disko.nixosModules.disko
-          qylock.nixosModules.default
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = { inherit inputs; };
-              users.lewis = ./home.nix;
-            };
-          }
-        ];
+            disko.nixosModules.disko
+            qylock.nixosModules.default
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit inputs; };
+                users.lewis = ./home/hosts/nixos-x.nix;
+              };
+            }
+          ];
+        };
       };
     };
 }
