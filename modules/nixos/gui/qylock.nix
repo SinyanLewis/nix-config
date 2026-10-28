@@ -6,7 +6,7 @@
     enable = true;
     theme = "clockwork/orbital";
     sddm.enable = true;
-    quickshell.enable = false;
+    quickshell.enable = true;
     themeOptions = {
       clockwork.orbital = {
         themeMode = "dark";

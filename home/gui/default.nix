@@ -11,6 +11,7 @@
 
     ./editors
     ./niri
+    ./quickshell
     ./waybar
   ];
 
