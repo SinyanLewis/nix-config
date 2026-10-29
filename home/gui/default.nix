@@ -7,6 +7,7 @@
     ./browsers.nix
     ./fcitx5.nix
     ./kitty.nix
+    ./obsidian.nix
     ./packages.nix
 
     ./editors
