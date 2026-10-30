@@ -5,6 +5,7 @@
   imports = [
     ./hardware-configuration.nix
     ./disko.nix
+    ./hardware/nvidia.nix
 
     ../../modules/nixos/base
     ../../modules/nixos/tui
