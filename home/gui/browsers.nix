@@ -36,11 +36,13 @@
           private_browsing = true;
           default_area = "menupanel";
         };
-        "{5efceaa7-f3a2-4e59-a54b-85319448e305}" = {
+        # KISS Translator
+        "{fb25c100-22ce-4d5a-be7e-75f3d6f0fc13}" = {
           installation_mode = "force_installed";
           private_browsing = true;
           default_area = "menupanel";
         };
+        # Bitwarden
         "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
           installation_mode = "force_installed";
           private_browsing = true;
