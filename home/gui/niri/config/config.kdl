@@ -107,7 +107,15 @@ output "eDP-1" {
 }
 
 output "DP-1" {
-    // off
+    off
+    mode "2240x1400@59.999"
+    scale 1.5
+    transform "90"
+    position x=-933 y=-400
+}
+
+output "DP-2" {
+    off
     mode "2240x1400@59.999"
     scale 1.5
     transform "90"
