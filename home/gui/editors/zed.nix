@@ -10,6 +10,8 @@
       "just"
       "kdl"
       "env"
+      "neocmake"
+      "git-firefly"
     ];
     userSettings = {
       auto_update = false;
@@ -28,7 +30,6 @@
       minimap.show = "always";
       tab_size = 2;
       indent_guides.coloring = "indent_aware";
-      format_on_save = "on";
       show_whitespaces = "trailing";
       editor.completion_menu_item_kind = "symbol";
       inlay_hints.enabled = true;
@@ -48,6 +49,11 @@
       git_panel.commit_title_max_length = 50;
       agent.dock = "right";
       terminal.cursor_shape = "bar";
+
+      languages.Nix.language_servers = [
+        "nixd"
+        "!nil"
+      ];
     };
     extraPackages = [ pkgs.nixd ];
   };
