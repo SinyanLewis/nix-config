@@ -7,4 +7,5 @@
     "flakes"
   ];
   nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
+  nix.channel.enable = false;
 }
